@@ -1,0 +1,9 @@
+.gradle
+.idea
+.kotlin
+./build
+./run
+
+# 프로젝트 제외 경로
+/build/
+/build/classes/java/main/

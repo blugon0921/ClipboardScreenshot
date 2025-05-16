@@ -1,0 +1,6 @@
+{
+  "key.screenshot.copy": "Copy Screenshot to clipboard",
+  "screenshot.copied": "Screenshot copied to clipboard",
+  "screenshot.copied.error": "Error copying screenshot to clipboard",
+  "screenshot.clipboard.error": "Clipboard not supported in this environment"
+}

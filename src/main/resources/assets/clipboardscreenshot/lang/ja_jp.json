@@ -1,0 +1,6 @@
+{
+  "key.screenshot.copy": "スクリーンショットをクリップボードにコピー",
+  "screenshot.copied": "スクリーンショットをクリップボードにコピーしました",
+  "screenshot.copied.error": "スクリーンショットをクリップボードにコピー中にエラーが発生しました",
+  "screenshot.clipboard.error": "クリップボードがサポートされていない環境です"
+}

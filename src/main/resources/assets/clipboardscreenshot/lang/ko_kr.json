@@ -1,0 +1,6 @@
+{
+  "key.screenshot.copy": "스크린샷 클립보드에 복사",
+  "screenshot.copied": "스크린샷을 클립보드에 복사했습니다",
+  "screenshot.copied.error": "스크린샷을 클립보드에 복사하는 중 오류가 발생했습니다",
+  "screenshot.clipboard.error": "클립보드가 지원되지 않는 환경입니다"
+}

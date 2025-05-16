@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "kr.blugon.clipboardscreenshot.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HeadlessFalse"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

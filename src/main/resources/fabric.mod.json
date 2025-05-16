@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "clipboardscreenshot",
+  "version": "${version}",
+  "name": "ClipboardScreenshot",
+  "description": "Copy screenshot to clipboard",
+  "authors": ["Blugon0921"],
+  "contact": {
+    "sources": "https://github.com/blugon0921/ClipboardScreenshot"
+  },
+  "license": "MIT",
+  "icon": "assets/clipboardscreenshot/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "kr.blugon.clipboardscreenshot.client.ClipboardScreenshotClient"
+    ],
+    "main": [
+      "kr.blugon.clipboardscreenshot.ClipboardScreenshot"
+    ]
+  },
+  "mixins": [
+    "clipboardscreenshot.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
