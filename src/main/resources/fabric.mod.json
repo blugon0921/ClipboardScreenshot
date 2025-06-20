@@ -6,7 +6,8 @@
   "description": "Copy screenshot to clipboard",
   "authors": ["Blugon0921"],
   "contact": {
-    "sources": "https://github.com/blugon0921/ClipboardScreenshot"
+    "sources": "https://github.com/blugon0921/ClipboardScreenshot",
+    "issues": "https://github.com/blugon0921/ClipboardScreenshot/issues"
   },
   "license": "MIT",
   "icon": "assets/clipboardscreenshot/icon.png",
