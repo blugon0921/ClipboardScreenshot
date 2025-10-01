@@ -1,5 +1,8 @@
 package kr.blugon.clipboardscreenshot.client
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
@@ -16,7 +19,6 @@ import java.awt.datatransfer.DataFlavor
 import java.awt.datatransfer.Transferable
 import java.awt.datatransfer.UnsupportedFlavorException
 import java.awt.image.BufferedImage
-import kotlin.concurrent.thread
 
 var wasKeyPressed = false
 class ClipboardScreenshotClient : ClientModInitializer {
@@ -24,7 +26,7 @@ class ClipboardScreenshotClient : ClientModInitializer {
         "key.screenshot.copy",
         InputUtil.Type.KEYSYM,
         GLFW.GLFW_KEY_F2,
-        "key.categories.misc"
+        KeyBinding.Category.MISC
     ))
 
 
@@ -32,7 +34,7 @@ class ClipboardScreenshotClient : ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             val window = client.window
             val isPressed = InputUtil.isKeyPressed(
-                window.handle,
+                window,
                 KeyBindingHelper.getBoundKeyOf(screenshotCopyKey).code)
             if(!isPressed) {
                 wasKeyPressed = false
@@ -40,15 +42,21 @@ class ClipboardScreenshotClient : ClientModInitializer {
             }
             if (wasKeyPressed) return@register
             wasKeyPressed = true
-            if (!GraphicsEnvironment.isHeadless()) {
-                val buffer = MinecraftClient.getInstance().framebuffer
-                ScreenshotRecorder.takeScreenshot(buffer) { image ->
-                    thread {
-                        copyToClipboard(image.toBufferedImage())
-                        client.player?.sendMessage(Text.translatable("screenshot.copied"), false)
+            val player = client.player
+            if(GraphicsEnvironment.isHeadless()) {
+                player?.sendMessage(Text.translatable("screenshot.clipboard.error"), false)
+                return@register
+            }
+            val instance = MinecraftClient.getInstance()
+            val buffer = instance.framebuffer
+            ScreenshotRecorder.takeScreenshot(buffer) { image ->
+                CoroutineScope(Dispatchers.Default).launch {
+                    copyToClipboard(image.toBufferedImage())
+                    instance.execute {
+                        player?.sendMessage(Text.translatable("screenshot.copied"), false)
                     }
                 }
-            } else client.player?.sendMessage(Text.translatable("screenshot.clipboard.error"), false)
+            }
         }
     }
 

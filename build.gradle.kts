@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.2.0"
-    id("fabric-loom") version "1.10.1"
+    kotlin("jvm") version "2.2.20"
+    id("fabric-loom") version "1.11-SNAPSHOT"
     id("maven-publish")
 }
 
