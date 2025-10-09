@@ -14,10 +14,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "kr.blugon.clipboardscreenshot.client.ClipboardScreenshotClient"
-    ],
-    "main": [
-      "kr.blugon.clipboardscreenshot.ClipboardScreenshot"
+      "kr.blugon.clipboardscreenshot.client.ClipboardScreenshotClientKt::initClient"
     ]
   },
   "mixins": [
@@ -27,6 +24,6 @@
     "fabricloader": ">=${loader_version}",
     "fabric-language-kotlin": ">=${kotlin_loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.21.9"
   }
 }
