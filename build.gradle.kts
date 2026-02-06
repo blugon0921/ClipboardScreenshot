@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.2.20"
-    id("fabric-loom") version "1.11-SNAPSHOT"
+    kotlin("jvm") version "2.3.10"
+    id("fabric-loom") version "1.13-SNAPSHOT"
     id("maven-publish")
 }
 
@@ -84,7 +84,8 @@ tasks.jar {
 }
 
 tasks.remapJar {
-    archiveFileName.set("${project.name}-${project.version}-${project.property("minecraft_version")}.jar")
+//    archiveFileName.set("${project.name}-${project.version}-${project.property("minecraft_version")}.jar")
+    archiveFileName.set("${project.name}-${project.version}.jar")
 }
 
 // configure the maven publication

@@ -14,7 +14,10 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "kr.blugon.clipboardscreenshot.client.ClipboardScreenshotClientKt::initClient"
+      {
+        "adapter": "kotlin",
+        "value": "kr.blugon.clipboardscreenshot.client.ClipboardScreenshotClientKt::initClient"
+      }
     ]
   },
   "mixins": [
