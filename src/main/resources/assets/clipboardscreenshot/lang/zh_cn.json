@@ -1,0 +1,6 @@
+{
+  "key.screenshot.copy": "复制屏幕截图到剪贴板",
+  "screenshot.copied": "屏幕截图已复制到剪贴板",
+  "screenshot.copied.error": "复制屏幕截图到剪贴板时出错",
+  "screenshot.clipboard.error": "此环境不支持剪贴板"
+}
