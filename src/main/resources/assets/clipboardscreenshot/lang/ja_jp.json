@@ -1,6 +1,13 @@
 {
+  "modmenu.descriptionTranslation.clipboard_screenshot": "’スクリーンショットをクリップボードにコピー’キー追加します。",
   "key.screenshot.copy": "スクリーンショットをクリップボードにコピー",
-  "screenshot.copied": "スクリーンショットをクリップボードにコピーしました",
-  "screenshot.copied.error": "スクリーンショットをクリップボードにコピー中にエラーが発生しました",
-  "screenshot.clipboard.error": "クリップボードがサポートされていない環境です"
+  "clipboard_screenshot.copied": "スクリーンショットをクリップボードにコピーしました",
+  "clipboard_screenshot.clipboard.error": "クリップボードがサポートされていない環境です",
+  "clipboard_screenshot.config.title": "クリップボードスクリーンショット設定",
+  "clipboard_screenshot.config.notification": "通知",
+  "clipboard_screenshot.config.notification.description": "'チャット'または'アクションバー'に設定されているとき、送信できない環境ではポップアップで通知します。",
+  "clipboard_screenshot.config.notification.chat": "チャット",
+  "clipboard_screenshot.config.notification.actionbar": "アクションバー",
+  "clipboard_screenshot.config.notification.toast": "ポップアップ",
+  "clipboard_screenshot.config.notification.none": "なし"
 }

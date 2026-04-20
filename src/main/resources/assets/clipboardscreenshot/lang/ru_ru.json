@@ -1,6 +1,13 @@
 {
+  "modmenu.descriptionTranslation.clipboard_screenshot": "Добавляет клавишу «Копировать снимок экрана в буфер обмена».",
   "key.screenshot.copy": "Копировать снимок экрана в буфер обмена",
-  "screenshot.copied": "Снимок экрана скопирован в буфер обмена",
-  "screenshot.copied.error": "Ошибка копирования снимка экрана в буфер обмена",
-  "screenshot.clipboard.error": "Буфер обмена не поддерживается в данной среде"
+  "clipboard_screenshot.copied": "Снимок экрана скопирован в буфер обмена",
+  "clipboard_screenshot.clipboard.error": "Буфер обмена не поддерживается в данной среде",
+  "clipboard_screenshot.config.title": "Настройки скриншота в буфер обмена",
+  "clipboard_screenshot.config.notification": "Уведомление",
+  "clipboard_screenshot.config.notification.description": "Если установлено значение «Чат» или «Панель действий», но отправка невозможна, уведомление будет показано во всплывающем окне.",
+  "clipboard_screenshot.config.notification.chat": "Чат",
+  "clipboard_screenshot.config.notification.actionbar": "Панель действий",
+  "clipboard_screenshot.config.notification.toast": "Всплывающее окно",
+  "clipboard_screenshot.config.notification.none": "Нет"
 }

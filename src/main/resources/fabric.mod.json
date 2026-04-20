@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "clipboardscreenshot",
+  "id": "clipboard_screenshot",
   "version": "${version}",
   "name": "ClipboardScreenshot",
-  "description": "Copy screenshot to clipboard",
+  "description": "Adds a 'Copy screenshot to clipboard' key",
   "authors": ["Blugon0921"],
   "contact": {
     "sources": "https://github.com/blugon0921/ClipboardScreenshot",
@@ -18,6 +18,9 @@
         "adapter": "kotlin",
         "value": "kr.blugon.clipboardscreenshot.client.ClipboardScreenshotClientKt::initClient"
       }
+    ],
+    "modmenu": [
+      "kr.blugon.clipboardscreenshot.client.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -27,6 +30,8 @@
     "fabricloader": ">=${loader_version}",
     "fabric-language-kotlin": ">=${fabric_kotlin_version}",
     "fabric-api": "*",
-    "minecraft": ">=26.1"
+    "minecraft": ">=26.1",
+    "yet_another_config_lib_v3": ">=${yacl_version}",
+    "modmenu": ">=${modmenu_version}"
   }
 }

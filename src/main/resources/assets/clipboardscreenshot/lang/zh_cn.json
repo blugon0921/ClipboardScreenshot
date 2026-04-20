@@ -1,6 +1,13 @@
 {
+  "modmenu.descriptionTranslation.clipboard_screenshot": "添加'复制屏幕截图到剪贴板'按键。",
   "key.screenshot.copy": "复制屏幕截图到剪贴板",
-  "screenshot.copied": "屏幕截图已复制到剪贴板",
-  "screenshot.copied.error": "复制屏幕截图到剪贴板时出错",
-  "screenshot.clipboard.error": "此环境不支持剪贴板"
+  "clipboard_screenshot.copied": "屏幕截图已复制到剪贴板",
+  "clipboard_screenshot.clipboard.error": "此环境不支持剪贴板",
+  "clipboard_screenshot.config.title": "剪贴板截图设置",
+  "clipboard_screenshot.config.notification": "通知",
+  "clipboard_screenshot.config.notification.description": "若设置为'聊天'或'动作栏'，但无法发送时，将以弹窗形式通知。",
+  "clipboard_screenshot.config.notification.chat": "聊天",
+  "clipboard_screenshot.config.notification.actionbar": "动作栏",
+  "clipboard_screenshot.config.notification.toast": "弹窗",
+  "clipboard_screenshot.config.notification.none": "无"
 }

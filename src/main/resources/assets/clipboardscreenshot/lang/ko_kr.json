@@ -1,6 +1,13 @@
 {
+  "modmenu.descriptionTranslation.clipboard_screenshot": "'스크린샷을 클립보드에 복사' 키를 추가합니다.",
   "key.screenshot.copy": "스크린샷을 클립보드에 복사",
-  "screenshot.copied": "스크린샷을 클립보드에 복사했습니다",
-  "screenshot.copied.error": "스크린샷을 클립보드에 복사하는 중 오류가 발생했습니다",
-  "screenshot.clipboard.error": "클립보드가 지원되지 않는 환경입니다"
+  "clipboard_screenshot.copied": "스크린샷을 클립보드에 복사했습니다",
+  "clipboard_screenshot.clipboard.error": "클립보드가 지원되지 않는 환경입니다",
+  "clipboard_screenshot.config.title": "클립보드 스크린샷 설정",
+  "clipboard_screenshot.config.notification": "알림",
+  "clipboard_screenshot.config.notification.description": "'채팅'이나 '액션바'로 설정되어 있을 때 보낼 수 없는 환경이라면 팝업으로 보냅니다.",
+  "clipboard_screenshot.config.notification.chat": "채팅",
+  "clipboard_screenshot.config.notification.actionbar": "액션바",
+  "clipboard_screenshot.config.notification.toast": "팝업",
+  "clipboard_screenshot.config.notification.none": "없음"
 }

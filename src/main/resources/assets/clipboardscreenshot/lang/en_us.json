@@ -1,6 +1,13 @@
 {
+  "modmenu.descriptionTranslation.clipboard_screenshot": "Adds a 'Copy screenshot to clipboard' key",
   "key.screenshot.copy": "Copy Screenshot to clipboard",
-  "screenshot.copied": "Screenshot copied to clipboard",
-  "screenshot.copied.error": "Error copying screenshot to clipboard",
-  "screenshot.clipboard.error": "Clipboard not supported in this environment"
+  "clipboard_screenshot.copied": "Screenshot copied to clipboard",
+  "clipboard_screenshot.clipboard.error": "Clipboard not supported in this environment",
+  "clipboard_screenshot.config.title": "Clipboard Screenshot Settings",
+  "clipboard_screenshot.config.notification": "Notification",
+  "clipboard_screenshot.config.notification.description": "If set to 'Chat' or 'Action Bar' but unavailable, it will fall back to a popup instead.",
+  "clipboard_screenshot.config.notification.chat": "Chat",
+  "clipboard_screenshot.config.notification.actionbar": "Action Bar",
+  "clipboard_screenshot.config.notification.toast": "Toast",
+  "clipboard_screenshot.config.notification.none": "None"
 }

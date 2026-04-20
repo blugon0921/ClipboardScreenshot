@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.3.10"
+    kotlin("jvm") version "2.3.20"
     id("net.fabricmc.fabric-loom")
     id("maven-publish")
 }
@@ -22,14 +22,19 @@ fabricApi {
 }
 
 repositories {
+    maven("https://maven.isxander.dev/releases")
+    maven("https://maven.terraformersmc.com/")
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
-    implementation ("net.fabricmc:fabric-loader:${project.property("loader_version")}")
+    implementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
 
-    implementation ("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_api_version")}")
-    implementation ("net.fabricmc:fabric-language-kotlin:${project.property("fabric_kotlin_version")}")
+    implementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_api_version")}")
+    implementation("net.fabricmc:fabric-language-kotlin:${project.property("fabric_kotlin_version")}")
+
+    implementation("dev.isxander:yet-another-config-lib:${project.property("yacl_version")}")
+    implementation("com.terraformersmc:modmenu:${project.property("modmenu_version")}")
 }
 
 tasks.processResources {
@@ -43,7 +48,9 @@ tasks.processResources {
             "version" to project.version,
             "minecraft_version" to project.property("minecraft_version").toString(),
             "loader_version" to project.property("loader_version").toString(),
-            "fabric_kotlin_version" to project.property("fabric_kotlin_version").toString()
+            "fabric_kotlin_version" to project.property("fabric_kotlin_version").toString(),
+            "yacl_version" to project.property("yacl_version").toString(),
+            "modmenu_version" to project.property("modmenu_version").toString(),
         )
     }
 }

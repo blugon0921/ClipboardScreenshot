@@ -5,8 +5,11 @@ import com.mojang.blaze3d.platform.NativeImage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kr.blugon.clipboardscreenshot.client.config.ClipboardScreenshotConfig
+import kr.blugon.clipboardscreenshot.client.config.NotificationType
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper
+import net.minecraft.ChatFormatting
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
 import net.minecraft.client.Screenshot
@@ -25,11 +28,13 @@ val screenshotCopyKey: KeyMapping = KeyMappingHelper.registerKeyMapping(KeyMappi
         "key.screenshot.copy",
         InputConstants.Type.KEYSYM,
         GLFW.GLFW_KEY_F2,
-    KeyMapping.Category.MISC
+        KeyMapping.Category.MISC
     )
 )
 
+val config = ClipboardScreenshotConfig()
 fun initClient() {
+    if(!config.loadFromFile()) config.saveToFile()
     ClientTickEvents.END_CLIENT_TICK.register { client ->
         val isPressed = InputConstants.isKeyDown(
             client.window,
@@ -42,7 +47,7 @@ fun initClient() {
         if (wasKeyPressed) return@register
         wasKeyPressed = true
         if(GraphicsEnvironment.isHeadless()) {
-            client.sendMessageOrToast(Component.translatable("screenshot.clipboard.error"))
+            client.sendNotification(Component.translatable("clipboard_screenshot.clipboard.error").withStyle(ChatFormatting.RED))
             return@register
         }
         val instance = Minecraft.getInstance()
@@ -51,17 +56,23 @@ fun initClient() {
             CoroutineScope(Dispatchers.Default).launch {
                 copyToClipboard(image.toBufferedImage())
                 instance.execute {
-                    client.sendMessageOrToast(Component.translatable("screenshot.copied"))
+                    client.sendNotification(Component.translatable("clipboard_screenshot.copied"))
                 }
             }
         }
     }
 }
 
-fun Minecraft.sendMessageOrToast(text: Component) {
-    if(player == null) toastManager.addToast(
-        SystemToast.multiline(this, SystemToast.SystemToastId.NARRATOR_TOGGLE, text, Component.literal(""))
-    ) else player!!.sendSystemMessage(text)
+fun Minecraft.sendNotification(text: Component) {
+    when(config.notificationType.get()) {
+        NotificationType.Chat -> (player?: return sendToast(text)).sendSystemMessage(text)
+        NotificationType.Actionbar -> (player?: return sendToast(text)).sendOverlayMessage(text)
+        NotificationType.Toast -> sendToast(text)
+        NotificationType.None -> return
+    }
+}
+fun Minecraft.sendToast(text: Component) {
+    toastManager.addToast(SystemToast.multiline(this, SystemToast.SystemToastId.NARRATOR_TOGGLE, text, Component.literal("")))
 }
 
 fun NativeImage.toBufferedImage(): BufferedImage {
