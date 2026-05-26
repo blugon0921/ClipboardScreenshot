@@ -1,0 +1,13 @@
+{
+  "modmenu.descriptionTranslation.clipboard_screenshot": "'Ekran görüntüsünü panoya kopyala' tuşu ekler",
+  "key.screenshot.copy": "Ekran Görüntüsünü Panoya Kopyala",
+  "clipboard_screenshot.copied": "Ekran görüntüsü panoya kopyalandı",
+  "clipboard_screenshot.clipboard.error": "Pano bu ortamda desteklenmiyor",
+  "clipboard_screenshot.config.title": "Panoya Ekran Görüntüsü Ayarları",
+  "clipboard_screenshot.config.notification": "Bildirim Türü",
+  "clipboard_screenshot.config.notification.description": "'Sohbet' veya 'Eylem Çubuğu' olarak ayarlandığında kullanılamıyorsa, bunun yerine varsayılan bildirime geri döner.",
+  "clipboard_screenshot.config.notification.chat": "Sohbet",
+  "clipboard_screenshot.config.notification.actionbar": "Eylem Çubuğu",
+  "clipboard_screenshot.config.notification.toast": "Bildirim",
+  "clipboard_screenshot.config.notification.none": "Hiçbiri"
+}
